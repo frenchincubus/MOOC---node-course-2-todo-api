@@ -39,11 +39,11 @@ app.get('/todos/:id', (req, res) => {
     res.status(404).send();
   }
 
-  User.findById(id).then((user) => {
-    if (!user) {
+  Todo.findById(id).then((todo) => {
+    if (!todo) {
         res.status(404).send();
     }
-    res.send({user});
+    res.send({todo});
   }).catch((e) => {
       res.status(400).send();
   });
